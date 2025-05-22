@@ -21,6 +21,7 @@
     font-size: 1rem;
     font-weight: 700;
     background-color: var(--accent-color);
+    border: 30%;
     color: var(--bg-color);
     border: none;
     width: 36px;

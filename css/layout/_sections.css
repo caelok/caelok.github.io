@@ -28,7 +28,7 @@
     font-family: var(--font-display);
     font-size: clamp(7rem, 28vw, 14rem);
     line-height: 0.85;
-    color: var(--accent-color);
+    color: var(--HERO-C);
     text-shadow: 0 0 8px var(--glow-color), 0 0 15px var(--glow-color);
     margin-bottom: 0.5rem;
     position: relative;

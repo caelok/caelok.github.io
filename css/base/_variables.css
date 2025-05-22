@@ -5,16 +5,18 @@
     --font-ui: 'Roboto Mono', monospace;                      
     --font-mono: 'Roboto Mono', monospace;                   
 
-    --bg-color: #F0EFE6;                                        /* background color */
-    --bg-color-rgb: 240, 239, 230;                               
-    --surface-color: #FFFFFF;                                 
+    --bg-color: #e3edfb;                                        /* background color */
+    --bg-color-rgb: 240, 239, 230;   
+
+    --surface-color: #d1e4f9ec;                                 
     --text-color: #2E2E2E;                                     
     --text-heading-color: #1A1A1A;                             
-    --accent-color: #FF4500;                                
+    --accent-color: #4f4f4f;             
+    --HERO-C:#c1daf6;                     
     --accent-rgb: 255, 69, 0;                                     
-    --accent-hover-color: #E03D00;                            
+    --accent-hover-color: #257dd2;                            
     --border-color: rgba(46, 46, 46, 0.15);                    
-    --glow-color: rgba(255, 69, 0, 0.4);                       
+    --glow-color: #257dd2;                       
     --shadow-color: rgba(0, 0, 0, 0.1);                         
     --scanline-color: rgba(0, 0, 0, 0.02);                     
 
@@ -23,16 +25,17 @@
 }
 
 [data-theme="dark-terminal"] {
-    --bg-color: #0A0A0A;
+    --bg-color: #3d3d3d;
     --bg-color-rgb: 10, 10, 10;
-    --surface-color: #141414;
-    --text-color: #B0B0B0;
-    --text-heading-color: #DCDCDC;
-    --accent-color: #00CF45;                                    
+    
+    --surface-color: #4e6075;
+    --text-color: #dedede;
+    --text-heading-color: #e3e1e1;
+    --accent-color: #c1daf6;                                    
     --accent-rgb: 0, 207, 69;
-    --accent-hover-color: #00E84D;
-    --border-color: rgba(0, 207, 69, 0.2);
-    --glow-color: rgba(0, 207, 69, 0.4);
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --scanline-color: rgba(0, 255, 69, 0.04);
+    --accent-hover-color: #257dd2;
+    --border-color: rgba(46, 46, 46, 0.15);                    
+    --glow-color: #257dd2;                       
+    --shadow-color: rgba(0, 0, 0, 0.1);                         
+    --scanline-color: rgba(0, 0, 0, 0.02);   
 }
