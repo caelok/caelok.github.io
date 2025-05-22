@@ -1,0 +1,24 @@
+@keyframes scanlineMove {
+    0% { background-position-y: 0px; }
+    100% { background-position-y: 100px; }
+}
+
+@keyframes preloaderLogoPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50%      { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes glitch-anim-1 {
+    0%   { clip: rect(32px, 9999px, 89px, 0); }
+    100% { clip: rect(52px, 9999px, 102px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0%   { clip: rect(70px, 9999px, 122px, 0); }
+    100% { clip: rect(12px, 9999px, 85px, 0); }
+}
+
+@keyframes arrowBounceSimple {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); opacity: 0.5; }
+}

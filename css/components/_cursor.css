@@ -1,0 +1,27 @@
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none; /* allows clicks to pass through */
+    z-index: 100000; /* ensure it's on top of most elements */
+    transform: translate(-50%, -50%); /* center the cursor on the mouse position */
+    mix-blend-mode: difference; /* creates an inversion effect with colors below */
+    transition: transform 0.1s ease-out, width 0.2s ease-out, height 0.2s ease-out; /* smooth transitions for size and position */
+}
+
+body:hover { /* hide the default system cursor when custom cursor is active */
+    cursor: none;
+}
+
+/* enlarge cursor on hover over interactive elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.nav-item:hover ~ .custom-cursor { /* specific for nav items if they don't trigger standard a/button hover */
+    transform: translate(-50%, -50%) scale(1.5);
+    width: 12px; /* new width on hover */
+    height: 12px; /* new height on hover */
+}

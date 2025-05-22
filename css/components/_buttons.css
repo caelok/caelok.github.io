@@ -1,0 +1,228 @@
+.filter-btn,
+.theme-toggle-btn, /* already styled in _navigation.css, but could be moved here for consistency */
+.control-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    transition: all var(--transition-main);
+}
+
+/* specific button styles */
+
+.theme-toggle-btn { /* if moved from _navigation.css */
+    color: var(--text-color);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* ensure no extra padding if it's just an icon */
+}
+
+.theme-toggle-btn:hover { /* if moved from _navigation.css */
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: scale(1.05) rotate(15deg);
+}
+
+.theme-toggle-btn .theme-icon { /* if moved from _navigation.css */
+    width: 16px;
+    height: 16px;
+}
+
+.filter-btn {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.hero-cta { /* already styled in _sections.css (hero part), can be consolidated or kept specific */
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.7rem 1.8rem;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.hero-cta:hover { /* already styled in _sections.css */
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.card-cta-btn {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    background: transparent;
+    border: none;
+    padding: 0.2rem 0;
+    cursor: pointer;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, transform 0.3s;
+    margin-top: auto; /* pushes button to bottom if card is flex column */
+}
+
+.card-cta-btn:hover {
+    color: var(--accent-hover-color);
+    transform: translateX(4px);
+    text-shadow: 0 0 3px var(--glow-color);
+}
+
+.control-btn { /* for ascii playground controls */
+    font-size: 0.8rem;
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+}
+
+.control-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.connect-email-link { /* styled in _sections.css (connect part) */
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all var(--transition-main);
+}
+
+.connect-email-link:hover { /* styled in _sections.css */
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    cursor: pointer;
+    transition: all var(--transition-main);
+}
+
+.copy-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.copy-btn.copied {
+    border-color: var(--accent-hover-color);
+    color: var(--accent-hover-color);
+}
+
+.copy-btn i { /* feather icon size */
+    width: 12px;
+    height: 12px;
+    display: block; /* helps with alignment sometimes */
+}
+
+#back-to-top { /* styled in _footer.css, but it's a button */
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: none; /* hidden by default, shown by js */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all var(--transition-main);
+}
+
+#back-to-top.visible {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--accent-hover-color);
+    transform: scale(1.05) !important;
+}
+
+.modal-close { /* styled in _modal.css, but it's a button */
+    font-family: var(--font-mono); /* or --font-ui if preferred for buttons */
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.4rem;
+    line-height: 1;
+    transition: color var(--transition-main), transform var(--transition-main);
+}
+
+.modal-close:hover { /* styled in _modal.css */
+    color: var(--accent-color);
+    transform: rotate(180deg);
+}
+
+.modal-item-links a { /* styled in _modal.css, but these are links acting as buttons */
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    transition: all var(--transition-main);
+}
+
+.modal-item-links a:hover { /* styled in _modal.css */
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.modal-item-links a i { /* feather icon size */
+    width: 14px;
+    height: 14px;
+}

@@ -1,0 +1,13 @@
+.scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* allows clicks to pass through */
+    z-index: -1; /* behind all content, could be higher if it's a visual effect on top */
+    background: linear-gradient(var(--scanline-color) 1px, transparent 1px);
+    background-size: 100% 4px; /* creates horizontal lines */
+    opacity: 0.6;
+    animation: scanlineMove 30s linear infinite; /* subtle movement animation, ensure @keyframes scanlineMove is defined (e.g., in _animations.css) */
+}

@@ -1,0 +1,352 @@
+.hero-section {
+    min-height: 100vh; /* full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* for absolute positioned children */
+    overflow: hidden; /* prevent particle overflow */
+    padding-top: var(--navbar-height); /* account for fixed navbar */
+}
+
+.hero-particles { /* three.js canvas */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* behind hero content */
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative; /* above particles */
+    z-index: 1;
+}
+
+.hero-logo-main {
+    font-family: var(--font-display);
+    font-size: clamp(7rem, 28vw, 14rem);
+    line-height: 0.85;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--glow-color), 0 0 15px var(--glow-color);
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--text-heading-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-subtitle .separator {
+    color: var(--accent-color);
+    margin: 0 0.2em;
+    opacity: 0.6;
+}
+
+.hero-cta { /* this is a button, could be in _buttons.css, but styled here as part of hero layout */
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.7rem 1.8rem;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.hero-cta:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.scroll-indicator-wrapper {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-text {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+.scroll-arrow {
+    width: 22px;
+    height: 22px;
+    color: var(--accent-color);
+    animation: arrowBounceSimple 1.5s ease-in-out infinite;
+}
+
+/* general content section styling */
+.content-section {
+    padding: 4.5rem 1.5rem; /* vertical and horizontal padding */
+    max-width: 900px; /* limiting width for readability on wider screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--accent-color);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2.2rem;
+}
+
+/* about section specific layout */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr; /* single column by default */
+    gap: 2.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    opacity: 0.9;
+}
+
+.skills-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1.2em; /* space for pseudo-element */
+    border: 1px solid transparent; /* for hover effect */
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.skills-list li::before {
+    content: '*'; /* bullet character */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    transition: transform 0.3s;
+}
+
+.skills-list li:hover {
+    color: var(--accent-hover-color);
+}
+
+.skills-list li:hover::before {
+    transform: rotate(180deg);
+}
+
+/* portfolio section specific layout */
+.portfolio-filters { /* filter buttons themselves will be in _buttons.css */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.portfolio-grid { /* cards will be in _cards.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive grid */
+    gap: 1.8rem;
+}
+
+/* ascii playground section specific layout */
+.ascii-playground-section {
+    background-color: var(--surface-color); /* different background for distinction */
+}
+
+.playground-container {
+    background-color: var(--bg-color); /* inner container matches body bg */
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+.ascii-canvas {
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    white-space: pre; /* preserve whitespace for ascii art */
+    overflow: hidden;
+    font-size: 10px; /* small font for dense ascii */
+    line-height: 0.9; /* tight line height */
+    text-align: center;
+    margin-bottom: 1rem;
+    min-height: 200px; /* ensure some height */
+    user-select: none; /* prevent text selection */
+}
+
+.playground-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playground-info {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* connect section specific layout */
+.connect-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* single column by default */
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.connect-text p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+
+.connect-email-link { /* this is a button/link, could be in _buttons.css */
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block; /* to respect padding and margin */
+    transition: all var(--transition-main);
+}
+
+.connect-email-link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.social-subtitle,
+.wallets-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column; /* stack social links */
+    gap: 0.6rem;
+}
+
+.social-icons a {
+    font-family: var(--font-ui);
+    display: inline-flex; /* for icon alignment */
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-main), transform var(--transition-main);
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+.social-icons i { /* feather icon styling */
+    width: 16px; /* consistent icon size */
+    height: 16px;
+    opacity: 0.7;
+}
+
+.social-icons a:hover i {
+    opacity: 1;
+}
+
+.crypto-wallets {
+    margin-top: 2rem; /* space if it's in a different column */
+}
+
+.crypto-item {
+    font-family: var(--font-mono);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.crypto-item span:first-child { /* e.g., "btc:", "eth:" */
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.crypto-address {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* responsive adjustments for section layouts */
+@media (min-width: 768px) { /* tablet and larger */
+    .about-content {
+        grid-template-columns: 2.5fr 2fr; /* two columns for about section */
+        gap: 3rem;
+    }
+
+    .connect-grid {
+        grid-template-columns: 1fr 1fr; /* two columns for connect section */
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) { /* smaller tablets and mobile */
+    .content-section {
+        padding: 3rem 1rem; /* reduced padding on mobile */
+    }
+
+    .hero-logo-main {
+        font-size: clamp(4.5rem, 22vw, 9rem); /* adjust hero logo size */
+    }
+
+    .ascii-canvas { /* if ascii canvas is more a layout than a component */
+        font-size: 8px; /* smaller ascii font for mobile */
+        line-height: 0.8;
+    }
+}

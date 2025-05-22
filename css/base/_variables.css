@@ -1,0 +1,38 @@
+:root {
+    --font-display: 'Syncopate', sans-serif;                
+    --font-heading: 'VT323', monospace;                         
+    --font-body: 'Roboto Mono', monospace;                     
+    --font-ui: 'Roboto Mono', monospace;                      
+    --font-mono: 'Roboto Mono', monospace;                   
+
+    --bg-color: #F0EFE6;                                        /* background color */
+    --bg-color-rgb: 240, 239, 230;                               
+    --surface-color: #FFFFFF;                                 
+    --text-color: #2E2E2E;                                     
+    --text-heading-color: #1A1A1A;                             
+    --accent-color: #FF4500;                                
+    --accent-rgb: 255, 69, 0;                                     
+    --accent-hover-color: #E03D00;                            
+    --border-color: rgba(46, 46, 46, 0.15);                    
+    --glow-color: rgba(255, 69, 0, 0.4);                       
+    --shadow-color: rgba(0, 0, 0, 0.1);                         
+    --scanline-color: rgba(0, 0, 0, 0.02);                     
+
+    --navbar-height: 60px;                                          
+    --transition-main: 0.3s cubic-bezier(0.4, 0, 0.2, 1);            
+}
+
+[data-theme="dark-terminal"] {
+    --bg-color: #0A0A0A;
+    --bg-color-rgb: 10, 10, 10;
+    --surface-color: #141414;
+    --text-color: #B0B0B0;
+    --text-heading-color: #DCDCDC;
+    --accent-color: #00CF45;                                    
+    --accent-rgb: 0, 207, 69;
+    --accent-hover-color: #00E84D;
+    --border-color: rgba(0, 207, 69, 0.2);
+    --glow-color: rgba(0, 207, 69, 0.4);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --scanline-color: rgba(0, 255, 69, 0.04);
+}

@@ -1,0 +1,37 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;                                    
+    margin: 0;                                                  
+    padding: 0;                                                 
+}
+
+html {
+    scroll-behavior: smooth;                                
+    font-size: 16px;                                            /* base-font size website */
+}
+
+body {
+    font-family: var(--font-body);                              
+    line-height: 1.65;                                       
+    color: var(--text-color);                                  
+    background-color: var(--bg-color);                       
+    transition: background-color 0.4s, color 0.4s;             
+    overflow-x: hidden;                                    
+    -webkit-font-smoothing: antialiased;                    
+    -moz-osx-font-smoothing: grayscale;                       
+}
+
+/*
+   NOTA: las media queries para ajustes responsivos generales del 'html' o 'body',
+         como el cambio de 'font-size' base en móviles, también podrían ir aquí.
+
+   EJEMPLO:
+   @media (max-width: 768px) {
+       html {
+           font-size: 15px;
+       }
+   }
+   si prefieres un archivo dedicado para responsividad,
+   se pueden agrupar ahí. lo mantendremos simple aquí.
+*/

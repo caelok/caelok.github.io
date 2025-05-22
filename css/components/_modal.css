@@ -1,0 +1,174 @@
+.modal {
+    position: fixed;
+    z-index: 20000; /* very high z-index */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--bg-color-rgb, 10, 10, 10), 0.85); /* semi-transparent background, fallback for rgb var */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* for safari */
+    display: none; /* hidden by default, shown by js */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* padding for smaller screens */
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 1.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    width: 100%;
+    max-width: 750px; /* max width of modal */
+    max-height: 90vh; /* max height relative to viewport */
+    overflow-y: auto; /* scrollable if content exceeds max-height */
+    position: relative; /* for positioning close button */
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.modal-close { /* this is a button, could be in _buttons.css */
+    font-family: var(--font-mono); /* or --font-ui if preferred for buttons */
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.4rem; /* make it easier to click */
+    line-height: 1;
+    transition: color var(--transition-main), transform var(--transition-main);
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+    transform: rotate(180deg);
+}
+
+.modal-item-title {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    margin-bottom: 0.4rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.modal-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-bottom: 1.2rem;
+}
+
+.modal-item-body {
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.modal-item-body h2,
+.modal-item-body h3,
+.modal-item-body h4 { /* styling for headings within markdown content */
+    font-family: var(--font-heading);
+    color: var(--text-heading-color);
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    font-size: 1.1em; /* relative to parent (.modal-item-body) */
+}
+
+.modal-item-body p {
+    margin-bottom: 0.9rem;
+}
+
+.modal-item-body a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 2px;
+}
+
+.modal-item-body a:hover {
+    color: var(--accent-hover-color);
+}
+
+.modal-item-body code { /* inline code */
+    font-family: var(--font-mono);
+    background-color: var(--bg-color); /* match body background */
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+.modal-item-body pre { /* code blocks */
+    background-color: var(--bg-color); /* can be overridden by highlight.js theme */
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    overflow-x: auto; /* scroll for long code lines */
+}
+
+.modal-item-body pre code { /* code inside pre (highlight.js target) */
+    display: block;
+    padding: 0.8em;
+    font-size: 0.75em; /* slightly smaller for code blocks */
+    border: none;
+    background: transparent; /* highlight.js will provide its own background */
+}
+
+.modal-item-body ul,
+.modal-item-body ol {
+    margin-left: 1rem; /* indent lists */
+    margin-bottom: 0.8rem;
+}
+
+.modal-item-body li {
+    margin-bottom: 0.3rem;
+}
+
+.modal-item-body blockquote {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 0.8rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.modal-item-links {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.2rem;
+}
+
+.modal-item-links a { /* these are links acting as buttons, could be in _buttons.css */
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    transition: all var(--transition-main);
+}
+
+.modal-item-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.modal-item-links a i { /* feather icon size in modal links */
+    width: 14px;
+    height: 14px;
+}

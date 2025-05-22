@@ -1,0 +1,72 @@
+.portfolio-grid { /* though this is layout, it's directly related to cards, can be here or in _sections.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive grid */
+    gap: 1.8rem;
+}
+
+.portfolio-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    padding: 1.2rem;
+    transition: transform var(--transition-main), box-shadow var(--transition-main), border-color var(--transition-main);
+    display: flex; /* for flex properties like flex-grow */
+    flex-direction: column; /* stack card elements vertically */
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px); /* slight lift on hover */
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.card-type {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.4rem;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-heading-color);
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+}
+
+.card-excerpt {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    opacity: 0.85;
+    flex-grow: 1; /* allows excerpt to fill space, pushing cta to bottom */
+}
+
+.card-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-bottom: 1rem; /* space before tags/cta */
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem; /* if date is present, this adds more space */
+    margin-bottom: 0.8rem; /* space before cta button */
+}
+
+.card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent-color);
+    background-color: rgba(var(--accent-rgb, 0, 207, 69), 0.08); /* subtle background for tags, with fallback */
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    opacity: 0.8;
+}
